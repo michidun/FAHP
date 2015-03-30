@@ -99,16 +99,16 @@ NM_MAT = RS / 9;
 NM_SUM =  sum(NM_MAT);
 
 N = [NM_MAT(:,1)/NM_SUM(3), NM_MAT(:,2)/NM_SUM(2), NM_MAT(:,3)/NM_SUM(1)];
-N = reshape(N',1,27);
+N = reshape(N',1,m*3);
 
 IN = fliplr(CS);
-IN = reshape(IN',1,27);
+IN = reshape(IN',1,m*3);
 IN = IN.^-1;
 
 AVP = (IN+N)/2;
 
 %Dezfucificación con centroide
-crisp = sum(reshape(AVP, 3, 9)',2)/3;
+crisp = sum(reshape(AVP, 3, m)',2)/3;
 
 result = crisp;
 end
