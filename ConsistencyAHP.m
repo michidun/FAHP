@@ -27,5 +27,5 @@ if CR > 0.10
     str=sprintf(str,CR);
     disp(str);
 end
-
+  printf("Índice de consistencia: %1.2f\n",CR)
 end

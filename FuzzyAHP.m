@@ -1,4 +1,4 @@
-function [ result ] = FuzzyAHP( CompMat )
+function [ result ] = FuzzyAHP( fuzzyCompMatCell )
 %FUZZYAHP Fuzzy AHP
 %   Fuzzy AHP selection algorithm
 %
@@ -7,69 +7,9 @@ function [ result ] = FuzzyAHP( CompMat )
 % CREATED:
 %           October, 2011
 
-% fuzzy tfn and inverse fuzzy tfn constants
-% Escala de Tolga
-fuzzyTFN = {[1     1     1  ] 	[1      1    1  ]
-            [1/2   3/4   1  ] 	[1      4/3  2  ]
-            [2/3   1     3/2] 	[2/3    1    3/2]
-            [1     3/2   2  ] 	[1/2    2/3  1  ]
-            [3/2   2     5/2] 	[2/5    1/2  2/3]
-            [2     5/2   3  ] 	[1/3    2/5  1/2]
-            [5/2   3     7/2] 	[2/7    1/3  2/5]
-            [3     7/2   4  ] 	[1/4    2/7  1/3]
-            [7/2   4     9/2] 	[2/9    1/4  2/7]};
+[m n] = size(fuzzyCompMatCell);
 
-fuzzyTFN = {[1     1     1  ]   [1      1    1  ]
-            [1/2   1     3/2]   [2/3    1    2  ]
-            [1     3/2   2  ]   [1/2    2/3  1  ]
-            [3/2   2     5/2]   [2/5    1/2  2/3]
-            [2     5/2   3  ]   [1/3    2/5  1/2]
-            [5/2   3     7/2]   [2/7    1/3  2/5]};
-
-fuzzyTFN = {[1     1     3  ]   [1/3    1    1  ]
-            [1     2     4  ]   [1/4    1/2  1  ]
-            [1     3     5  ]   [1/5    1/3  1  ]
-            [2     4     6  ]   [1/6    1/4  1/2]
-            [3     5     7  ]   [1/7    1/5  1/3]
-            [4     6     8  ]   [1/8    1/6  1/4]
-            [5     7     9  ]   [1/9    1/7  1/5]
-            [6     8     9  ]   [1/9    1/8  1/6]
-            [7     9     9  ]   [1/9    1/9  1/7]};
-
-fuzzyTFN = {[1     1     1  ]   [1      1    1  ]
-            [1     2     3  ]   [1/3    1/2  1  ]
-            [2     3     4  ]   [1/4    1/3  1/2]
-            [3     4     5  ]   [1/5    1/4  1/3]
-            [4     5     6  ]   [1/6    1/5  1/4]
-            [5     6     7  ]   [1/7    1/6  1/5]
-            [6     7     8  ]   [1/8    1/7  1/6]
-            [7     8     9  ]   [1/9    1/8  1/7]
-            [8     9     10 ]   [1/10   1/9  1/8]};
-
-
-fuzzyCompMatCell={};
-
-%%
-% convert ordinal numbers to
-% triangular fuzzy number using fuzzyTFN matrix
-[m n] = size(CompMat);
-
-for i=1:m
-    for j=i+1:m
-       CompMat(j,i) = 1 / CompMat(i,j); 
-    end
-end
-
-for i=1:m
-    for j=1:n
-        criteria = CompMat(i,j);
-        if criteria >= 1
-           fuzzyCompMatCell{i,j} = fuzzyTFN{ criteria ,1 };
-        else
-           fuzzyCompMatCell{i,j} = fuzzyTFN{ round(criteria^-1) ,2 };
-        end
-    end
-end
+%fuzzyCompMatCell = FuzzyTFN(CompMat);
 
 % Row sum
 for i=1:m
@@ -107,8 +47,8 @@ IN = IN.^-1;
 
 AVP = (IN+N)/2;
 
-%Dezfucificación con centroide
-crisp = sum(reshape(AVP, 3, m)',2)/3;
+for i=0:m-1
+  result{i+1} = [AVP(i*3+1), AVP(i*3+2), AVP(i*3+3)];
+end
 
-result = crisp;
 end
