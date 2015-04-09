@@ -1,3 +1,4 @@
+pkg load io statistics
 clear
 
 [exist, names] = xlsfinfo ('muestras/1/workbook.xlsx');
@@ -163,13 +164,20 @@ PrintTFN(GFPV);
 #Desfuzificación mediante centroide
 printf("\nDesfuzificación mediante centroide\n");
 for i=1:n
-  GPV(i) = mean(GFPV{i}); 
+  AVERAGEPV(i) = mean(GFPV{i}); 
 end
 
-GPV
+AVERAGEPV
+
+WPV = AVERAGEPV/sum(AVERAGEPV);
+
+WPV
 
 clf ();
-bar(GPV);
+bar(WPV);
 print -dpdf "plots/plot.pdf";
 #filename = strcat("plots/plot.pdf");
 #saveas(1, filename);
+
+printf("\nSuma de Comprobación\n");
+sum(WPV)
