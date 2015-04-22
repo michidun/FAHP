@@ -1,3 +1,5 @@
+pkg install pkg/io.tar.gz
+pkg install pkg/statistics.tar.gz
 pkg load io statistics
 clear
 
