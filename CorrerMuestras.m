@@ -60,6 +60,9 @@ for w=1:wmax
   endfor
   
   PrintTFN(CompMat);
+
+  printf "Verificando consistencia de la matriz unificada\n";
+  ConsistencyAHP(CompMat); 
   
   printf("\nAplicando FuzzyAHP sobre la matriz unificada...\n");
   result = FuzzyAHP(CompMat);

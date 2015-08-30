@@ -43,8 +43,8 @@ function [ CR ] = ConsistencyAHP( CompMat )
 
 	CR = IC/RI(1,n);
 
-	if CR > 0.10
-	    str = 'CR is %% %1.2f. Subjective evaluation is NOT consistent!!!';
+	if round(CR*10)/10 > 0.10
+	    str = 'RC es %% %1.2f. La evaluación subjetiva NO es consistente!!!';
 	    str = sprintf(str,CR);
 	    disp(str);
 	end
