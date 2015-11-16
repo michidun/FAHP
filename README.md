@@ -18,16 +18,12 @@ brew install octave git
 
 Descargar los paquetes de instalación tanto de git como de octave de la siguiente dirección, ejecutarlo y seguir las instrucciones:
 
-`
-https://ftp.gnu.org/gnu/octave/windows/
-https://github.com/git-for-windows/git/releases/tag/v2.6.3.windows.1
-`
+`https://ftp.gnu.org/gnu/octave/windows/`
+`https://github.com/git-for-windows/git/releases/tag/v2.6.3.windows.1`
 
 # Descarga
-`
-git clone https://github.com/michidun/FAHP
-cd FAHP/
-`
+`git clone https://github.com/michidun/FAHP`
+`cd FAHP/`
 
 Debe tener git instalado para poder descargar el código fuente.
 
