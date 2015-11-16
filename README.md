@@ -4,23 +4,33 @@ Mediante este script desarrollado en octave se pueden procesar los calculos mate
 # Configuración
 ## Linux Debian/Ubuntu
 <code>
-sudo apt-get install octave
+sudo apt-get install octave git
 </code>
 
 ## OSX
 Utilizando el manejador de paquetes Homebrew (http://brew.sh/)
 
 <code>
-brew install octave
+brew install octave git
 </code>
 
 ## Windows
 
-Descargar el paquete de instalación de la siguiente dirección:
+Descargar los paquetes de instalación tanto de git como de octave de la siguiente dirección, ejecutarlo y seguir las instrucciones:
 
 <code>
 https://ftp.gnu.org/gnu/octave/windows/
+https://github.com/git-for-windows/git/releases/tag/v2.6.3.windows.1
 </code>
+
+# Descarga
+<code>
+git clone https://github.com/michidun/FAHP
+cd FAHP/
+</code>
+
+Debe tener git instalado para poder descargar el código fuente.
+
 
 # Ejecución
 
