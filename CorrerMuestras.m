@@ -36,14 +36,6 @@ for w=1:wmax
   printf("C:\n");
   TFN_C = FuzzyTFN(C);
   PrintTFN(TFN_C);
-
-  # Verificando consistencia según fórmula
-  printf "Verificando consistencia de muestra A:\n";
-  ConsistencyAHP(TFN_A); 
-  printf "Verificando consistencia de muestra B:\n";
-  ConsistencyAHP(TFN_B); 
-  printf "Verificando consistencia de muestra C:\n";
-  ConsistencyAHP(TFN_C); 
   
   # Creando matriz unificada utilizando media geométrica
   printf("\nCreando matriz unificada utilizando media geométrica...\n");
