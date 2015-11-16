@@ -92,32 +92,6 @@ printf("\nSubcriterios x Criterio 3:\n");
 PrintTFN(SC{3});
 printf("\nSubcriterios x Criterio 4:\n");
 PrintTFN(SC{4});
-
-m = length(SC);
-
-for i=1:m
-  n = length(SC{i});
-  for j=1:n
-    lv = lv + SC{i}{j}(1);
-    mv = mv + SC{i}{j}(2);
-    uv = uv + SC{i}{j}(3);
-  endfor
-endfor
- 
-GFPV = [lv, mv, uv];
-
-GFPV
-
-%Desfuzificación mediante centroide
-for i=1:n
-  AVERAGEPV(i) = mean(GFPV{i}); 
-end
-
-AVERAGEPV
-
-WPV = AVERAGEPV/sum(AVERAGEPV);
-WPV
-
 printf("\nProyectos x ML:\n");
 PrintTFN(APV{1});
 printf("\nProyectos x FE:\n");
