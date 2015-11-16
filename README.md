@@ -29,3 +29,6 @@ octave CorrerMuestras.m > output.log
 </code>
 
 Los resultados de la ejecución se muestran en el archivo output.log
+
+## Agradecimientos
+Parte de este script contiene código basado desarrollado por F. Ozgur CATAK
