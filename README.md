@@ -1,5 +1,5 @@
 # FAHP
-Mediante este script desarrollado en octave se pueden procesar los calculos matemáticos del método Fuzzy Aanalytic Hierarchy Process (FAHP)
+Mediante este script desarrollado en octave se pueden procesar los calculos matemáticos del método Fuzzy Analytic Hierarchy Process (FAHP)
 
 # Configuración
 ## Linux Debian/Ubuntu
