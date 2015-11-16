@@ -1,26 +1,33 @@
 # FAHP
-Mediante este script desarrollado en octave se pueden procesar los calculos matemáticos del método Fuzzy Aanalytic Hierarchy Process (FAHP)
+Mediante este script desarrollado en octave se pueden procesar los calculos matemáticos del método Fuzzy Analytic Hierarchy Process (FAHP)
 
 # Configuración
 ## Linux Debian/Ubuntu
-<code>
-sudo apt-get install octave
-</code>
+`
+sudo apt-get install octave git
+`
 
 ## OSX
 Utilizando el manejador de paquetes Homebrew (http://brew.sh/)
 
-<code>
-brew install octave
-</code>
+`
+brew install octave git
+`
 
 ## Windows
 
-Descargar el paquete de instalación de la siguiente dirección:
+Descargar los paquetes de instalación tanto de git como de octave de la siguiente dirección, ejecutarlo y seguir las instrucciones:
 
-<code>
-https://ftp.gnu.org/gnu/octave/windows/
-</code>
+`https://ftp.gnu.org/gnu/octave/windows/`
+
+`https://github.com/git-for-windows/git/releases/tag/v2.6.3.windows.1`
+
+# Descarga
+`git clone https://github.com/michidun/FAHP`
+
+`cd FAHP/`
+
+Debe tener git instalado para poder descargar el código fuente.
 
 # Ejecución
 
